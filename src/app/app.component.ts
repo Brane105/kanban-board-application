@@ -114,22 +114,6 @@ export class AppComponent {
       }
     });
   }
-
-
-  // drop(event: CdkDragDrop<Task[]>): void {
-  //   if (event.previousContainer === event.container) {
-  //     return;
-  //   }
-  //   if (!event.container.data || !event.previousContainer.data) {
-  //     return;
-  //   }
-  //   transferArrayItem(
-  //     event.previousContainer.data,
-  //     event.container.data,
-  //     event.previousIndex,
-  //     event.currentIndex
-  //   );
-  // }
   async drop(event: CdkDragDrop<Task[]>): Promise<void> {
     if (event.previousContainer === event.container) {
       return;
