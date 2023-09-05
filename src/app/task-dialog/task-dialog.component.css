@@ -1,0 +1,43 @@
+.container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100%; /* Center vertically */
+  }
+  
+  .form-field {
+    width: 100%; /* Set the width to 100% for full-width form fields */
+    margin-bottom: 20px;
+ /* Add some space between form fields */
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between; /* Align buttons with space between them */
+    align-items: center;
+    margin-bottom: 20px /* Add space above buttons */
+  }
+  
+/* Add this CSS to style the buttons */
+.delete-button {
+    background-color: #f44336; /* Red background for delete button */
+    color: white;
+    padding: 8px 16px; /* Add padding to make the button smaller */
+    margin-right: 10px; /* Add margin to separate the buttons */
+  }
+  
+  .ok-button {
+    background-color: #4caf50; /* Green background for OK button */
+    color: white;
+    padding: 8px 16px;
+    margin-right: 10px;  /* Add padding to make the button smaller */
+  }
+  
+  .cancel-button {
+    background-color: #ccc; /* Light gray background for Cancel button */
+    padding: 8px 16px; /* Add padding to make the button smaller */
+  }
+  
+  
