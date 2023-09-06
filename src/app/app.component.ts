@@ -4,7 +4,7 @@ import { CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
 import { TaskDialogComponent, TaskDialogResult } from './task-dialog/task-dialog.component';
 import { Firestore, addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from '@angular/fire/firestore';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -154,7 +154,7 @@ export class AppComponent {
       width: '500px',
       data: {
         task: {
-          id: uuidv4(),
+          id: '',
           title: '', // Set the default title or leave it empty
           description: '', // Set the default description or leave it empty
           status: 'todo', // Set the default status to 'todo'
@@ -177,6 +177,7 @@ export class AppComponent {
         // Add the new task to Firestore
         try {
           const tasksCollection = collection(this.db, 'tasks');
+          result.task.id = result.task.title + '-' + this.generateRandomNumber();
           const newTaskDocument = await addDoc(tasksCollection, result.task);
           result.task.id = newTaskDocument.id;
           this.fetchTasks();
@@ -194,6 +195,10 @@ export class AppComponent {
           });
         }
       });
+  }
+  generateRandomNumber() {
+    // Generate a random number between 1 and 1000 (adjust range as needed)
+    return Math.floor(Math.random() * 1000) + 1;
   }
 
 }
